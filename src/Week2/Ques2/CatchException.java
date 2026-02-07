@@ -30,7 +30,7 @@ public class CatchException {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		try {                     // for an object less than 18 o exception will be thrown
+		try {                     // for an object less than 18 an  exception will be thrown
 			CatchException user = new CatchException("Anjali", 17);
 			user.checkAge();				
 		}
@@ -47,7 +47,7 @@ public class CatchException {
 		user2.checkAge();
 		}
 		
-		catch(InvalidAgeException iae) {
+		catch(InvalidAgeException iae) {           
 			System.out.println("An error is encountered: " + iae.getMessage());
 		}
 		
