@@ -20,8 +20,7 @@ class Modification{                                  // class to pass the value 
 	public void setValue(int value) {
 		this.value=value;
 	}
-	
-	
+		
 }
 
 
@@ -51,11 +50,9 @@ public class Ques5 {
 		System.out.println("The value before the method call is = " + m.getValue());
 		
 		q.display(m);
-		System.out.println("The value after the method call is =  " + m.getValue());
-			
+		System.out.println("The value after the method call is =  " + m.getValue());			
 	}
 	
-
 	public void display(int number) {
 		System.out.println("The value inside method call is = " + number);
 
@@ -75,8 +72,7 @@ public class Ques5 {
 		*/
 		
 		System.out.println("The value inside method call after modification is = " + m.getValue());
-	}
-		
+	}		
 
 }
 
