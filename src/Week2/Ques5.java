@@ -64,7 +64,7 @@ public class Ques5 {
 		System.out.println("The value inside method call after modification is = " + number);
 	}
 	
-	public void display(Modification m) {
+	public void display(Modification m) {         //method overloading
 		System.out.println("The value inside method call is =" + m.getValue());
 		
 		//m = new Modification(80);                         //for modifying only the value inside the method
