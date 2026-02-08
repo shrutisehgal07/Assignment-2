@@ -1,5 +1,14 @@
 package Week2;
 
+/*
+  Create a class BankAccount with: -
+	• A private variable balance
+	• An inner class Transaction that can: -
+		o Deposit money
+		o Withdraw money
+   Demonstrate how the inner class accesses private members of the outer class.
+ */
+
 public class BankAccount {
 	
 	private double balance;
@@ -36,9 +45,10 @@ public class BankAccount {
 			
 			BankAccount.Transaction t= account.new Transaction();
 			
-			t.depositMoney(2000);
+			t.depositMoney(2000); 
 			System.out.println();
 			t.withdrawMoney(3000);
 		}
-
+		// Since the inner class is inside the class of Bank Account so private are accessible as it is 
+		//within the scope of the outer class
 }
