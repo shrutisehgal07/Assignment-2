@@ -1,5 +1,13 @@
 package Week2.Ques8;
 
+/* Create a class User that implements Serializable with fields: -
+		• username
+		• password (marked as transient)
+		• email
+	• Serialize the object to a file.
+	• Deserialize it and print all field values.
+	• Explain why the password value is not restored.*/
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
