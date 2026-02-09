@@ -23,7 +23,8 @@ public class Student implements Comparable<Student>{
 	
 	@Override
 	public int compareTo(Student student) {
-		return this.marks - student.marks;        // it will sort the marks in ascending order
+		return this.marks - student.marks;  // it will sort the marks in ascending order
+		// for descending student.marks - this.marks
 	}
 	
 }

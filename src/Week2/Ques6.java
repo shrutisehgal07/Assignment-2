@@ -21,7 +21,6 @@ public class Ques6 {
 		employees.add("Rohit");
 		employees.add("Surya");
 		
-		//print all the names using the lambda expression
 		
 		System.out.println("All the names of the employees are: ");
 		employees.forEach(name -> System.out.println(name));              
