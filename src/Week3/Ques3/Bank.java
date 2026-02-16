@@ -14,7 +14,6 @@ public class Bank implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		deposit(2000);
 		withdraw(3000);
 		
