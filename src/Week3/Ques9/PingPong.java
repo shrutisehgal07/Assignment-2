@@ -8,7 +8,7 @@ and so on, without any skipping or repeated prints.
 
 public class PingPong implements Runnable{
 	
-	boolean ping= true;
+	boolean ping= true;          // because we need to start with ping
 	@Override
 	public void run() {
 		
@@ -17,17 +17,17 @@ public class PingPong implements Runnable{
 			synchronized(this){
 				if(ping) {
 					System.out.println("Ping");
-					ping=false;
+					ping=false;                   // for alternating 
 				}
 				else {
 					System.out.println("Pong");
 					ping = true;
 					
 				}
-				//notify();
+				notify();
 				if(i<5) {
-				try {
-				//	wait();
+				try {                // good practice
+				wait();          // optional but to ensure only one thread is in the block
 				}
 				catch(Exception e) {
 					e.printStackTrace();

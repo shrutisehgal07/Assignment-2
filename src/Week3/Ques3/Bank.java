@@ -21,14 +21,14 @@ public class Bank implements Runnable{
 	
 	private static synchronized void deposit(int amount) {
 		
-		balance= balance+amount;
+		balance= balance + amount;
 		System.out.println("Balance after amount deposited is: " + balance);
 	}
 	
 	private static synchronized void withdraw(int amount) {
 		
 		if(balance>= amount) {
-			balance=balance -amount;
+			balance -= amount;
 			System.out.println("Balance after amount withdrawal is: " + balance);
 		}
 		else {
