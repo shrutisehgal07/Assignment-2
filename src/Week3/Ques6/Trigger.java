@@ -12,7 +12,6 @@ import java.util.concurrent.CountDownLatch;
 public class Trigger {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	//	RelayRace race = new RelayRace();
 		int count = 3;
