@@ -10,7 +10,7 @@ import java.util.*;
 public class ProducerConsumer extends Thread {
 	
 	Queue<Integer> buffer = new LinkedList<>();
-	private static final Integer MAX_SIZE = 5;
+	private static final int MAX_SIZE= 5;
 	int val=0;
 	
 	public synchronized void producer(int val) throws InterruptedException{    //producer thread for generation
@@ -20,7 +20,7 @@ public class ProducerConsumer extends Thread {
 		}
 		
 		buffer.add(val);
-		System.out.println("Item produced are: " + val);
+		System.out.println("Item produced: " + val);
 		
 		notify();
 	}
