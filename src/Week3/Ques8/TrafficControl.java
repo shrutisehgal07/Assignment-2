@@ -12,7 +12,7 @@ resources in a multithreaded environment.
 
 public class TrafficControl {
 
-	private final Semaphore semaphore = new Semaphore(3);
+	private final Semaphore semaphore = new Semaphore(3);  // 3 for specifically 3 cars
 	
 	public void pass() {
 		try {
@@ -24,7 +24,7 @@ public class TrafficControl {
 		catch (InterruptedException e) {	      
 			e.printStackTrace();
 		}
-		finally {
+		finally { // we can also do it without finally
 			semaphore.release();  //releasing the acquired lock
 		}
 	}
