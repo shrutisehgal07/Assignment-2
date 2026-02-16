@@ -14,26 +14,25 @@ public class Trigger {
 	public static void main(String[] args) {
 
 	//	RelayRace race = new RelayRace();
-		int count = 3;
-		CountDownLatch latch = new CountDownLatch(count);
+	
+		CountDownLatch latch1 = new CountDownLatch(1);
+		CountDownLatch latch2 = new CountDownLatch(1);
+		CountDownLatch latch3 = new CountDownLatch(1);
 		
 		
 	//	Thread t2 = new Thread(race);
 	//	Thread t3 = new Thread(race);
 		
-
-        for (int i = 0; i < count; i++) {
-        	Thread t1 = new Thread(new RelayRace(latch));  
+		Thread t1 = new Thread(new RelayRace( "Runner 1", null,latch1));
+		Thread t2 = new Thread(new RelayRace("Runner 2", latch1, latch2));  
+		Thread t3 = new Thread(new RelayRace("Runner 3", latch2, latch3));  
+		Thread t4 = new Thread(new RelayRace("Runner 4", latch3, null));  
         	
-        	t1.start();
-        }
-		
-        try {
-            latch.await(); 
-        } 
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        
 	}
 
 }

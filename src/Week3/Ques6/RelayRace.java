@@ -11,27 +11,41 @@ some threads need to wait for others to finish.*/
 
 public class RelayRace implements Runnable{
 
-	private final CountDownLatch latch;
+	private final CountDownLatch wait;
+	private final String name;
+	private final CountDownLatch next;
 	
-	RelayRace(CountDownLatch latch){
-		this.latch = latch;
+	RelayRace(String name, CountDownLatch latch2, CountDownLatch latch){
+		
+		this.wait=latch2;
+		this.next = latch;
+		this.name=name;		
 	}
 	
 	
 	@Override
 	public void run() {
-		System.out.println(Thread.currentThread().getName() + " is in the waiting state");
-		 try {
-	            Thread.sleep(200); 
-	            System.out.println(Thread.currentThread().getName() + " is running");
-	        } 
+		try {
+			// wait for previous runner latch to become 0
+			if(wait != null) {
+				wait.await();
+			}
+			
+			System.out.println(name + " has started running");
+		 
+	        Thread.sleep(1500);
+	        System.out.println(name + " has finished running");
+	            
+		} 
 	     catch (InterruptedException e) {
-	            e.printStackTrace();
-	        }
-		 //System.out.println();
-		finally {
-		latch.countDown(); 		   // it is used to decrease the count
-		}
+	    	 e.printStackTrace();
+	     }
+		
+		if(next != null) {
+        	next.countDown();          // for countdown to become 0
+        }
+          
+		
 	} 
 
 }
