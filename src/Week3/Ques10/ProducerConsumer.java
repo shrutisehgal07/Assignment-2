@@ -22,8 +22,8 @@ public class ProducerConsumer extends Thread {
 		buffer.add(val);
 		System.out.println("Item produced: " + val);
 		
-		notify();
-	}
+		notify();           // to wake up the consumer
+	} 
 	
 	public synchronized void consumer() throws InterruptedException{        // consumer thread to consume
 		 
@@ -34,7 +34,8 @@ public class ProducerConsumer extends Thread {
 		int item = buffer.remove();
 		System.out.println("Items consumed are: " + item);
 		
-		notify();
+		
+		notify();   // to wake up the producer
 		
 	}
 
