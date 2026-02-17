@@ -39,3 +39,7 @@ public class ProducerConsumer extends Thread {
 	}
 
 }
+
+// main use of producer consumer is till the time buffer is not full producer will keep adding items and 
+//consumer will keep implementing till buffer is empty.
+// to prevent DEADLOCK

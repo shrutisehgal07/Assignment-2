@@ -13,7 +13,10 @@ resources in a multithreaded environment.
 public class TrafficControl {
 
 	private final Semaphore semaphore = new Semaphore(3);  // 3 for specifically 3 cars
-	
+	/*  private final Semaphore semaphore = new Semaphore(3,true); 
+	 * boolean in parameters tell in which order the threads arrived. So on FCFS permit will 
+	 * be granted.
+	*/
 	public void pass() {
 		try {
 			semaphore.acquire(); // to acquire the lock 
@@ -21,8 +24,9 @@ public class TrafficControl {
 			Thread.sleep(2500); //considering the time it takes to pass the tunnel
 			System.out.println(Thread.currentThread().getName() + " has exited the tunnel");
 		} 
-		catch (InterruptedException e) {	      
-			e.printStackTrace();
+		catch (InterruptedException e) {
+			System.out.println("Interrupted Exception was encountered.");
+			//e.printStackTrace();
 		}
 		finally { // we can also do it without finally
 			semaphore.release();  //releasing the acquired lock
