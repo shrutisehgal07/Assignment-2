@@ -13,8 +13,8 @@ public class Trigger {
 	public static void main(String[] args) {
 		
 		TrafficControl tc = new TrafficControl();
-		
-		for(int i=1;i<=5;i++) {
+		 
+		for(int i=1;i<=5;i++) {             // this loop is to make 5 threads.
 			Thread car = new Thread(tc::pass, "Car " + i);
 			
 			car.start();

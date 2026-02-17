@@ -21,8 +21,8 @@ public class TrafficControl {
 		try {
 			semaphore.acquire(); // to acquire the lock 
 			System.out.println(Thread.currentThread().getName() + " has entered the tunnel");
-			Thread.sleep(2500); //considering the time it takes to pass the tunnel
-			System.out.println(Thread.currentThread().getName() + " has exited the tunnel");
+			Thread.sleep(3500); //considering the time it takes to pass the tunnel
+			System.out.println(Thread.currentThread().getName() + " has exited the tunnel\n");
 		} 
 		catch (InterruptedException e) {
 			System.out.println("Interrupted Exception was encountered.");
