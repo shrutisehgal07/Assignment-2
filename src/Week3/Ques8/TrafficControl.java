@@ -14,8 +14,8 @@ public class TrafficControl {
 
 	private final Semaphore semaphore = new Semaphore(3);  // 3 for specifically 3 cars
 	/*  private final Semaphore semaphore = new Semaphore(3,true); 
-	 * boolean in parameters tell in which order the threads arrived. So on FCFS permit will 
-	 * be granted.
+	 	boolean in parameters tell in which order the threads arrived. So on FCFS permit will 
+	  	be granted.
 	*/
 	public void pass() {
 		try {
