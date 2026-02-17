@@ -9,7 +9,7 @@ public class Main {
 		int rating =2;
 		int attendance = 20;
 		
-		Employee emp = new Manager(baseSalary);
+		Employee emp = new Developer(baseSalary);
 		
 		System.out.println("The salary calculation module of an Employee is");
 		
@@ -29,5 +29,11 @@ public class Main {
 		System.out.println("The pf deduction is: " + pf); 
 		System.out.println("The tax deduction is: " + tax);
 		System.out.println("The net salary is: " + emp.netSalary(gross, bonus, tax, pf, attendanceDeduct));
+		
+		
+		
+		
+		
+		
 	}
 }
